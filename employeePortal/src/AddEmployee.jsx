@@ -81,7 +81,7 @@ export default function addEmployee() {
             value={employee.address.pincode}
           />
           <br />
-          <Button variant="success" type="submit" className="btn">
+          <Button variant="success" type="submit" className="btnReg">
             Register
           </Button>
         </form>
