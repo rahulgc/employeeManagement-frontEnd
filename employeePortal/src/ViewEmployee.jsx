@@ -1,6 +1,7 @@
 import Card from "react-bootstrap/Card";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Button from "react-bootstrap/Button";
 export default function ViewEmployee() {
   const [employee, setEmployee] = useState();
   let listEmployee;
@@ -18,6 +19,25 @@ export default function ViewEmployee() {
     });
   }, []);
 
+  const deleteEmployee=(e)=>{
+    let msg=e.target.parentElement.firstElementChild.innerHTML;
+    let id=msg.split(":")[1];
+    console.log(id.trim());
+    axios.delete(`http://localhost:8080/employees/delete/${id}`).then((res)=>{
+      console.log(res.data);
+      alert(res.data);
+      const updatedEmployee = employee.filter((e)=>
+        e.empId !==Number.parseInt(id)
+      );
+      setEmployee(updatedEmployee);
+      
+    }).catch((e)=>{
+      console.log(e);
+      alert("Something Went Wrong ! Please Retry")
+    })
+
+  }
+
   useEffect(() => {
     listEmployee =
       employee &&
@@ -28,8 +48,8 @@ export default function ViewEmployee() {
             <Card.Subtitle className="mb-2 text-muted">
               {e.empName}
             </Card.Subtitle>
-            <Card.Link href="#">Update</Card.Link>
-            <Card.Link href="#">Delete</Card.Link>
+            <Button className="btn">Update</Button>
+            <Button className="btn" onClick={deleteEmployee}>Delete</Button>
           </Card.Body>
         </Card>
       ));

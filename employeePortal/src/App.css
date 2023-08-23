@@ -55,7 +55,7 @@ input{
   font-weight: 500;
 
 }
-.btn{
+.btnReg{
   margin-left:150px;
 
 }
@@ -63,4 +63,12 @@ input{
   color: green;
   text-align: center;
   font-weight: 500;
+}
+.btn{
+  margin: 2px;
+  width: 80px;
+  height: 38px;
+}
+.btn:hover{
+  background: black;
 }
