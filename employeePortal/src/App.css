@@ -18,22 +18,20 @@ body{
   padding-bottom: 10px;
   font-weight: 500;
   font-size: 1.2rem;
-  }
-.link2{
-margin-right: 10px;
-margin-left: 300%;
-text-decoration: none;
-color: white;
-}
-
-.link3{
+  } 
+.route{
 margin-right: 10px;
 margin-left: 10px;
 text-decoration: none;
 color: white;
 }
+.container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
 .me-auto{
-  float: right;
 }
 input{
   width: 400px;

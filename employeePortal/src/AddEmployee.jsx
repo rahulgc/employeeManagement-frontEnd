@@ -55,7 +55,7 @@ export default function addEmployee() {
             name="empName"
             onChange={handleChange}
             value={employee.empName}
-          />{" "}
+          />
           <br />
           <input
             type="text"

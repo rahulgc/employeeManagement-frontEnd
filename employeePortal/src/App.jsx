@@ -1,10 +1,9 @@
 import './App.css'
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import {BrowserRouter, Routes, Route , Link} from "react-router-dom";
 import ViewEmployee from './ViewEmployee';
 import AddEmployee from './AddEmployee';
+import UpdateEmployee from './UpdateEmployee';
 
 
 function App() {
@@ -15,18 +14,19 @@ function App() {
     <>
  <BrowserRouter>
         <Navbar bg="dark" data-bs-theme="dark" className='nav'>
-        <Container>
-          <Link to="/" className='link1'>Employee Portal</Link>
-          <Nav className="me-auto">
-            <Link className='link2' to="/viewEmployee">ViewEmployee</Link>
-            <Link className='link3' to="/addEmployee">AddEmployee</Link>
-          </Nav>
-        </Container>
+        <div className='container'>
+          <div className='logo'><Link to="/" className='link1'>Employee Portal</Link></div>
+          <div className="routes">
+            <Link className='route' to="/viewEmployee">ViewEmployee</Link>
+            <Link className='route' to="/addEmployee">AddEmployee</Link>
+          </div>
+        </div >
       </Navbar>
       <Routes>
         <Route path="/" element={<ViewEmployee/>} />
         <Route path="/viewEmployee" element={<ViewEmployee/>} />
         <Route path="/addEmployee" element={<AddEmployee/>} />
+        <Route path="/updateEmployee/:id" element={<UpdateEmployee/>} />
       </Routes>
       </BrowserRouter>
     </>
