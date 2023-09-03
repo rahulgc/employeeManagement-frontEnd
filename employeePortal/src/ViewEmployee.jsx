@@ -81,5 +81,5 @@ export default function ViewEmployee() {
     setList(listEmployee);
   }, [employee]);
 
-  return <>{list}</>;
+  return(<div className="cardcontainer">{list}</div>);
 }
